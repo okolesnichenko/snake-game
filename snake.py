@@ -59,8 +59,4 @@ while (keyboard.is_pressed('q') == False):
     if(snake[0]==[x,y]):
         x = randrange(0, 580, 20)
         y = randrange(0, 580, 20)
-
 root.mainloop()
-
-def insertDot(snake, ud, rl):
-    snake.insert(0, [snake[0][0]+ud, snake[0][1]+rl])
