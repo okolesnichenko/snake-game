@@ -13,7 +13,7 @@ root = Tk()
 canvas = Canvas(root, width = WIDTH, height = HEIGHT, bg = '#2f353b')
 canvas.pack()
 lastPressed = 'a'
-snake = [[300,300], [320, 300], [340, 300], [360, 300], [380, 300]]
+snake = [[300,300], [320, 300], [340, 300]]
 #draw snake and apple
 def draw(snake, x, y):
     canvas.delete("all")
@@ -41,22 +41,38 @@ def move(snake, lastPressed, x, y):
     if(lastPressed == 's'):
         snake.insert(0, [snake[0][0], snake[0][1]+SIZE_BLOCK])
         popAndDraw(snake, x, y)
+#fails
+def endGame(snake):
+    count = 0
+    for c in snake:
+        if(snake[0] == c):
+            count += 1
+    if(count == 2):
+        return True
+    if((snake[0][0] < 0) | (snake[0][0] > 580)):
+        return True
+    if((snake[0][1] < 0) | (snake[0][1] > 580)):
+        return True
+
 #coord of apple
 x = randrange(0, 580, 20)
 y = randrange(0, 580, 20)
 draw(snake, x, y)
 root.update()
 while (keyboard.is_pressed('q') == False):
-    if(keyboard.is_pressed('w')&(lastPressed != 's')):
+    if(keyboard.is_pressed('w') & (lastPressed != 's')):
         lastPressed = 'w'
-    if(keyboard.is_pressed('a')&(lastPressed != 'd')):
+    if(keyboard.is_pressed('a') & (lastPressed != 'd')):
         lastPressed = 'a'
-    if(keyboard.is_pressed('d')&(lastPressed != 'a')):
+    if(keyboard.is_pressed('d') & (lastPressed != 'a')):
         lastPressed = 'd'
-    if(keyboard.is_pressed('s')&(lastPressed != 'w')):
+    if(keyboard.is_pressed('s') & (lastPressed != 'w')):
         lastPressed = 's'
     move(snake, lastPressed, x, y)
     if(snake[0]==[x,y]):
         x = randrange(0, 580, 20)
         y = randrange(0, 580, 20)
+    if(endGame(snake)):
+        break
+canvas.create_text(290, 290, text = "You lost", font="Arial 20", fill="white")
 root.mainloop()
