@@ -5,8 +5,8 @@ from random import randrange
 import time
 import keyboard
 
-WIDTH = 600
-HEIGHT = 600
+WIDTH = 602
+HEIGHT = 602
 SIZE_BLOCK = 20
 #tkinter settings + canvas
 root = Tk()
@@ -74,5 +74,5 @@ while (keyboard.is_pressed('q') == False):
         y = randrange(0, 580, 20)
     if(endGame(snake)):
         break
-canvas.create_text(290, 290, text = "You lost", font="Arial 20", fill="white")
+canvas.create_text(290, 290, text = "You lose", font="Arial 20", fill="white")
 root.mainloop()
