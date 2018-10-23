@@ -32,13 +32,13 @@ def move(snake, lastPressed, x, y):
     if(lastPressed == 'w'):
         snake.insert(0, [snake[0][0], snake[0][1]-SIZE_BLOCK])
         popAndDraw(snake, x, y)
-    if(lastPressed == 'a'):
+    elif(lastPressed == 'a'):
         snake.insert(0, [snake[0][0]-SIZE_BLOCK, snake[0][1]])
         popAndDraw(snake, x, y)
-    if(lastPressed == 'd'):
+    elif(lastPressed == 'd'):
         snake.insert(0, [snake[0][0]+SIZE_BLOCK, snake[0][1]])
         popAndDraw(snake, x, y)
-    if(lastPressed == 's'):
+    elif(lastPressed == 's'):
         snake.insert(0, [snake[0][0], snake[0][1]+SIZE_BLOCK])
         popAndDraw(snake, x, y)
 #fails
@@ -62,11 +62,11 @@ root.update()
 while (keyboard.is_pressed('q') == False):
     if(keyboard.is_pressed('w') & (lastPressed != 's')):
         lastPressed = 'w'
-    if(keyboard.is_pressed('a') & (lastPressed != 'd')):
+    elif(keyboard.is_pressed('a') & (lastPressed != 'd')):
         lastPressed = 'a'
-    if(keyboard.is_pressed('d') & (lastPressed != 'a')):
+    elif(keyboard.is_pressed('d') & (lastPressed != 'a')):
         lastPressed = 'd'
-    if(keyboard.is_pressed('s') & (lastPressed != 'w')):
+    elif(keyboard.is_pressed('s') & (lastPressed != 'w')):
         lastPressed = 's'
     move(snake, lastPressed, x, y)
     if(snake[0]==[x,y]):
