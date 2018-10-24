@@ -1,3 +1,2 @@
 # snakeGame
-snake game
-Just realistion og snake game
+Just realistion of a snake game
