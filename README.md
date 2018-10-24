@@ -1,2 +1,2 @@
 # snakeGame
-Just realistion of a snake game
+Just realisation of a snake game
