@@ -80,6 +80,6 @@ def game():
 game()
 
 canvas.create_text(WIDTH//2,HEIGHT//2, text = "You lose", font="Arial 20", fill="white")
-canvas.create_text(WIDTH//2 - 10, HEIGHT//2 + 40, text = "Press F to start", font="Arial 15", fill="white")
+# canvas.create_text(WIDTH//2 - 10, HEIGHT//2 + 40, text = "Press F to start", font="Arial 15", fill="white")
 # need to start again
 root.mainloop()
