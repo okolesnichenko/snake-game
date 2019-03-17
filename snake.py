@@ -76,10 +76,22 @@ def game():
             y = randrange(0, 580, 20)
         if(endGame(snake)):
             break
-#Start game
-game()
+def main():
+    #Start game
+    game()
+    while True:
+        if keyboard.is_pressed('f'):
+            game()
+        if keyboard.is_pressed('q'):
+            break
 
-canvas.create_text(WIDTH//2,HEIGHT//2, text = "You lose", font="Arial 20", fill="white")
-# canvas.create_text(WIDTH//2 - 10, HEIGHT//2 + 40, text = "Press F to start", font="Arial 15", fill="white")
-# need to start again
-root.mainloop()
+    # canvas.create_text(WIDTH//2 - 10, HEIGHT//2 + 40, text = "Press F to start", font="Arial 15", fill="white")
+    # need to start again
+
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        exit()
