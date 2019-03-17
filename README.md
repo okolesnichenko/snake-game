@@ -1,2 +1,4 @@
 # snakeGame
-Just realisation of a snake game
+Start: <br>
+sudo apt-get install python3-tk <br>
+python snake.py
